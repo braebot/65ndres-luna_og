@@ -1,3 +1,5 @@
+
+@import "bootstrap";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +15,59 @@
  *= require_tree .
  *= require_self
  */
+
+ h1 {
+  color: #c6b27d !important
+ }
+
+ .btn-primary {
+  color: #fff;
+  background-color: #b68448;
+  border-color: #b68448;
+}
+
+ html, body {
+  height: 100vh;
+  background-color: #142b34;
+ }
+
+ .form-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+ }
+
+
+.form-control {
+  background-color: #142b34;
+}
+
+.form-wrapper div.form-group{
+  width: 50%;
+}
+
+form.form {
+  display: flex;
+}
+
+.submit {
+  margin-left: 10px;
+}
+
+.url-list div.card {
+  width: 20%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.url-list {
+
+  padding: 100px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+}

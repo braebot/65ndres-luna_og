@@ -1,12 +1,27 @@
-<h1> Hello URLS</h1>
 
-<%= form_for @url do |f| %>
-  <div class="field">
-    <%= f.label :text, "Text" %>
-    <%= f.text_field :text, placeholder: "Enter the URL" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Save Post" %>
+<div class="landing-title text-center pt-5">
+  <h1> Open Graph Previewer</h1>
+</div>
+<div class="form-wrapper">
+  <div class="form-group">
+    <%= form_for@url, html: {class: "form"} do |f| %>
+        <%= f.text_field :text,class: "form-control", placeholder: "Enter the URL" %> <%= submit_tag "Submit", class: "btn submit btn-primary" %>
+    <% end %>
   </div>
-<% end %>
+</div>
+
+
+<div class="url-list">
+  <%= @urls.each do |url|%>
+    <div class="card">
+  <%= image_tag("placeholder.svg", class: "card-img-top") %>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+  <% end %>
+</div>
+
