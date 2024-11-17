@@ -1,43 +1,63 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import "bootstrap";
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
 
- h1 {
-  color: #c6b27d !important
- }
+* {
+  font-family: "Spectral", sans-serif;
+}
 
- .btn-primary {
+a:hover {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+html, body {
+  height: 100vh;
+  background-color: #142b34;
+}
+
+.btn-primary {
   color: #fff;
   background-color: #b68448;
   border-color: #b68448;
 }
 
- html, body {
-  height: 100vh;
-  background-color: #142b34;
- }
+.btn-primary:hover {
+  color: #fff;
+  background-color: #b68448;
+  border-color: #b68448;
+}
 
- .form-wrapper {
+.landing-title {
+  padding-top: 100px;
+  color: #c6b27d !important;
+}
+
+form {
+  display: flex;
+}
+.submit {
+  margin-left: 10px;
+}
+
+.author {
+  color: #c6b27d !important;
+  text-decoration: underline;
+}
+
+.form-wrapper {
   display: flex;
   justify-content: center;
   padding-top: 50px;
   padding-bottom: 50px;
  }
-
 
 .form-control {
   background-color: #142b34;
@@ -47,12 +67,38 @@
   width: 50%;
 }
 
-form.form {
-  display: flex;
+.card {
+ background-color: #142b34;
+ color: #afb0b1 !important;
+ box-shadow: rgba(21, 21, 21, 1.72) 0 6px 18px 0, rgba(137, 135, 135, 0.24) 0 0 0 1px;
 }
 
-.submit {
-  margin-left: 10px;
+a.card {
+  color: #afb0b1;
+}
+
+
+h5.card-title {
+  color: #c6b27d ;
+}
+
+.card-body {
+  min-height: 108px;
+}
+
+.card-text {
+  color: #afb0b1;
+}
+
+.card-img-top {
+  border-top-left-radius: 3%;
+  border-top-right-radius: 3%;
+  height: 200px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
 }
 
 .url-list div.card {
@@ -64,22 +110,16 @@ form.form {
 }
 
 .url-list {
-  padding: 100px;
+  padding: 50px 100px 100px 100px;
   display: flex;
   width: 100%;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
 
-.card {
- background-color: #142b34;
- color: #afb0b1 !important;
- box-shadow: rgba(21, 21, 21, 1.72) 0 6px 18px 0, rgba(137, 135, 135, 0.24) 0 0 0 1px;
-
-}
-
-h5.card-title {
-  color: #c6b27d ;
+#url_text {
+  line-height: 30px;
+  border:1px solid #535557;
 }
 
 .text-ellipsis {
@@ -88,17 +128,9 @@ h5.card-title {
   text-overflow: ellipsis;
 }
 
-.card-img-top {
-  border-top-left-radius: 3%;
-  border-top-right-radius: 3%;
-  height: 200px;
-}
-
 .no-image {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-}
-.card-body {
-  min-height: 108px;
+  color: #afb0b1;
 }
 
 .form-control:focus {
@@ -109,9 +141,15 @@ h5.card-title {
   box-shadow: 0 0 0 0.2rem rgba(233, 202, 114, 0.25);
 }
 
-#url_text {
-  line-height: 30px;
-  border:1px solid #535557;
+.delete-button {
+  background-color: #142b34;
+  border:0;
 }
 
+.delete-button:focus-visible, .delete-button:focus {
+  outline:0;
+}
 
+.delete-button-icon {
+  height: 25px;
+}

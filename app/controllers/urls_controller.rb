@@ -2,18 +2,21 @@ require 'open-uri'
 
 class UrlsController < ApplicationController
   def index
-    @url = Url.new
-
+    @url  = Url.new
     @urls = Url.order(created_at: :desc)
   end
 
   def create
-    puts "Hope fully thi sis the Things #{params}"
     url = Url.new(url_params)
     if url.save
       redirect_to urls_path
-    else
     end
+  end
+
+  def destroy
+    url = Url.find(params["id"])
+    url.delete
+    redirect_to urls_path
   end
 
   private
@@ -21,6 +24,4 @@ class UrlsController < ApplicationController
   def url_params
     params.require("url").permit("text")
   end
-
-
 end
