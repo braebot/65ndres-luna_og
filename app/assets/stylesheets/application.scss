@@ -56,18 +56,62 @@ form.form {
 }
 
 .url-list div.card {
-  width: 20%;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
+  width: 30%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
   margin-bottom: 2.5%;
+  border-radius: 4%;
 }
 
 .url-list {
-
   padding: 100px;
   display: flex;
   width: 100%;
   justify-content: flex-start;
   flex-wrap: wrap;
+}
+
+.card {
+ background-color: #142b34;
+ color: #afb0b1 !important;
+ box-shadow: rgba(21, 21, 21, 1.72) 0 6px 18px 0, rgba(137, 135, 135, 0.24) 0 0 0 1px;
 
 }
+
+h5.card-title {
+  color: #c6b27d ;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-img-top {
+  border-top-left-radius: 3%;
+  border-top-right-radius: 3%;
+  height: 200px;
+}
+
+.no-image {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.card-body {
+  min-height: 108px;
+}
+
+.form-control:focus {
+  color: #afb0b1;
+  background-color: #142b34 !important;
+  border-color: #c6b27d;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(233, 202, 114, 0.25);
+}
+
+#url_text {
+  line-height: 30px;
+  border:1px solid #535557;
+}
+
+

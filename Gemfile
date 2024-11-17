@@ -19,6 +19,9 @@ gem "jbuilder"
 
 gem 'bootstrap', '~> 4.0.0'
 gem "sassc-rails"
+gem 'delayed_job_active_record'
+
+gem 'nokogiri'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

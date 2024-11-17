@@ -5,23 +5,77 @@
 </div>
 <div class="form-wrapper">
   <div class="form-group">
-    <%= form_for@url, html: {class: "form"} do |f| %>
-        <%= f.text_field :text,class: "form-control", placeholder: "Enter the URL" %> <%= submit_tag "Submit", class: "btn submit btn-primary" %>
+    <%= form_for @url, html: {class: "form"} do |f| %>
+        <%= f.text_field :text,class: "form-control", placeholder: "Enter the URL" %> 
+        <%= submit_tag "Preview", class: "btn submit btn-primary" %>
     <% end %>
   </div>
 </div>
 
 
 <div class="url-list">
-  <%= @urls.each do |url|%>
-    <div class="card">
-  <%= image_tag("placeholder.svg", class: "card-img-top") %>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+  <% @urls.each do |url|%>
+    <% if url.status == "completed" %>
+      <div class="card">
+        <% if url.image %>
+          <%= image_tag(url.image, class: "card-img-top") %>
+        <% else %>
+          <div class="flex h-full flex-col items-center justify-center rounded-md px-4 py-4 text-center no-image">
+            <svg xmlns="http://www.w3.org/2000/svg" style="height: 100px;"viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="text-stone-300">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+            </svg>
+            <p class="mt-3 mb-0 text-center text-stone-600">
+              og:image not found
+            </p>
+          </div>
+        <% end %>
+        
+        <div class="card-body">
+          <p class="card-text text-muted m-0"><%= url.hostname %></p>
+          <h5 class="card-title text-ellipsis m-0"><%= url.title %></h5>
+          <p class="card-text text-ellipsis m-0"><%= url.description %></p>
+
+        </div>
+        <div class="card-footer text-muted">
+          status: <%= url.status %>
+        </div>
+      </div>
+    <% else %>
+      <div class="card">
+      <div class="flex h-full flex-col items-center justify-center rounded-md px-4 py-4 text-center no-image">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle 
+            cx="50" 
+            cy="50" 
+            r="40" 
+            stroke="#afb0b1" 
+            stroke-width="6" 
+            fill="none" 
+            stroke-dasharray="251.2" 
+            stroke-dashoffset="125.6" 
+            stroke-linecap="round">
+            <animateTransform 
+              attributeName="transform" 
+              type="rotate" 
+              from="0 50 50" 
+              to="360 50 50" 
+              dur="1s" 
+              repeatCount="indefinite" />
+          </circle>
+        </svg>
+          <p class="mt-3 mb-0 text-center text-stone-600">
+            Processing...
+          </p>
+        </div>
+        <div class="card-body">
+          <p class="card-text text-muted m-0"><%= url.hostname %></p>
+        </div>
+        <div class="card-footer text-muted">
+          status: <%= url.status %>
+        </div>
+      </div>
+
+    <% end %>
   <% end %>
 </div>
 
